@@ -1,0 +1,16 @@
+#info{
+    background-color: lightblue;
+}
+
+#foto{
+    background-size: cover; 
+    background-position: center; 
+    width: 14vw; 
+    height: 14vw; 
+    background-image: url('../../Media/foto_personal.jpg');
+
+}
+
+#personalInfo{
+    height: 40%;
+}

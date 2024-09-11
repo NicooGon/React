@@ -1,0 +1,11 @@
+#career{
+    background-color: rgba(245, 245, 245, 0.848);
+}
+
+#proyects{
+    background-image: url('../../Media/github.jpg'); 
+    height: 30vh; 
+    width: 30vh; 
+    background-position: center; 
+    background-size: cover;
+}
