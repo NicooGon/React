@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { Formulario } from '../Formulario/formulario';
+import { Estrellas } from '../estrellas/Estrellas';
 
 
 export function Estudios(){
@@ -34,6 +35,7 @@ export function Estudios(){
                 <FontAwesomeIcon icon={faCircleArrowRight} /><label for="">Universidad Catolica del Uruguay</label>
             </div>
         </div>
+        <Estrellas></Estrellas>
         <div id="proyects" className="" onClick={boton}></div>
 
         {
@@ -41,7 +43,7 @@ export function Estudios(){
         }
         
     </div>
-      )
-
+    
+    )
 }
 
