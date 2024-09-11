@@ -9,6 +9,7 @@ function App() {
     <div id="principal" class="row d-flex flex-column flex-md-row">
        <Barra></Barra>
        <Estudios></Estudios>
+       
       </div>
       
   );

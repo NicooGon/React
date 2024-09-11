@@ -1,8 +1,20 @@
 import './estudios.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+import { Formulario } from '../Formulario/formulario';
+
 
 export function Estudios(){
+    const [mostrar, setMostrar] = useState(false);
+
+    function botonFormulario()
+    {
+        setMostrar(true);
+        let contactMe= document.getElementById('contactMe');
+        contactMe.style.display = 'none';
+    }
+
     function boton()
     {
         window.open("https://github.com/NicooGon/CSS-HTML.git");
@@ -23,6 +35,11 @@ export function Estudios(){
             </div>
         </div>
         <div id="proyects" className="" onClick={boton}></div>
+
+        {
+            mostrar===false ? (<button class="col-2 fs-4" id='contactMe' onClick={botonFormulario}>Contact Me</button>) : (<Formulario></Formulario>)
+        }
+        
     </div>
       )
 
