@@ -1,41 +1,40 @@
+import { useState } from "react";
+
 export function Formulario(){
+
+    const [nombre,setNombre] = useState('');
+    const [apellido, setApellido] = useState('');
+    const [email, setEmail] = useState('');
+    const [telefono, setTelefono] = useState(0);
 
     function inputNull()
         {
-            let inputs = document.getElementsByClassName('input');
-            let nombreFormulario = document.getElementById('nombreFormulario');
-            let apellidoFormulario = document.getElementById('apellidoFormulario');
-            let emailFormulario = document.getElementById('emailFormulario');
             let emailRegex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
             let textRegex = /^[a-zA-Z\s]*$/;
-
-            for (var i = 0; i<inputs.length; i++)
-            {
-                if(inputs[i].value === '')
-                {
-                    alert('Los campos tienen que estar completos');
-                    return;
-                }
-            }
-                    
-            if(!textRegex.test(nombreFormulario.value) || !textRegex.test(apellidoFormulario.value))
+         
+            if(!textRegex.test(nombre) || !textRegex.test(apellido))
             {
                 alert('El nombre y apellido solo puede contener letras')
             }
 
-            if(!emailRegex.test(emailFormulario.value))
+            if(!emailRegex.test(email))
             {
                 alert('Se introdujo el mail de manera incorrecta');
             }
         }
 
-    return (
-        <div class="col-3 d-flex flex-column text-break" id="info">
-            <input type="text" placeholder="Nombre" className="input" id="nombreFormulario" />
-            <input type="text" placeholder="Apellido" className="input" id="apellidoFormulario" />
-            <input type="text" placeholder="Email" className="input" id="emailFormulario" />
-            <input type="number" placeholder="Telefono" className="input" />
-            <button onClick={inputNull}>Enviar</button>
-        </div>
-    );
+        return (
+            <div class="d-flex flex-column text-break">
+                <div class="fw-bold -fs-3">
+                    <label>Contact Me</label>
+                </div>
+                <form onSubmit={inputNull} className="d-flex flex-column">
+                    <input type="text" placeholder="Nombre" className="input" id="nombreFormulario" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+                    <input type="text" placeholder="Apellido" className="input" id="apellidoFormulario" value={apellido} onChange={(e) => setApellido(e.target.value)} />
+                    <input type="text" placeholder="Email" className="input" id="emailFormulario" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="number" placeholder="Telefono" className="input" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
+                    <button> Enviar</button>
+                </form>
+            </div>
+        );
 }
